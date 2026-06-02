@@ -1,0 +1,619 @@
+/* ===================================
+   AGRINHO 2026
+   Agro Forte, Futuro Sustentável
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5fff4;
+    color:#222;
+    line-height:1.8;
+    transition:0.4s;
+}
+
+/* Barra de progresso */
+
+#barra-progresso{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0%;
+    height:6px;
+    background:linear-gradient(
+    90deg,
+    #00c853,
+    #64dd17,
+    #ffee58
+    );
+    z-index:9999;
+}
+
+/* Menu */
+
+header{
+    background:linear-gradient(
+    135deg,
+    #1b5e20,
+    #2e7d32,
+    #4caf50
+    );
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+nav{
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+}
+
+nav h1{
+    color:white;
+    font-size:2rem;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ffeb3b;
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.5),
+    rgba(0,0,0,.5)
+    ),
+
+    url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero-texto{
+    color:white;
+    max-width:900px;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+
+    animation:subir 1.5s ease;
+}
+
+.hero p{
+    font-size:1.5rem;
+}
+
+/* Seções */
+
+section{
+    padding:80px 10%;
+}
+
+section h2{
+    text-align:center;
+    color:#1b5e20;
+    margin-bottom:30px;
+    font-size:2.5rem;
+}
+
+section p{
+    margin-bottom:20px;
+    text-align:justify;
+}
+
+/* Imagens */
+
+section img{
+    width:100%;
+    max-width:900px;
+
+    display:block;
+    margin:30px auto;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.2);
+}
+
+/* Galeria */
+
+.galeria{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.galeria img{
+    height:250px;
+    object-fit:cover;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.galeria img:hover{
+
+    transform:scale(1.08);
+
+}
+
+/* Cards */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+.card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.1);
+
+    transition:.4s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.card h3{
+
+    color:#2e7d32;
+    margin-bottom:15px;
+
+}
+
+/* Quiz */
+
+#quiz{
+
+    background:#e8f5e9;
+
+    border-radius:20px;
+
+}
+
+#quiz button{
+
+    background:#2e7d32;
+    color:white;
+
+    border:none;
+
+    padding:12px 30px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    transition:.3s;
+
+}
+
+#quiz button:hover{
+
+    background:#1b5e20;
+
+}
+
+/* Acessibilidade */
+
+.acessibilidade{
+
+    background:#dcedc8;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+.acessibilidade button{
+
+    background:#1b5e20;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.acessibilidade button:hover{
+
+    background:#388e3c;
+
+}
+
+/* Mapa */
+
+iframe{
+
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 20px rgba(0,0,0,.2);
+
+}
+
+/* Estatísticas */
+
+#contador,
+#relogio,
+#frase{
+
+    font-size:1.3rem;
+
+    text-align:center;
+
+    font-weight:bold;
+
+}
+
+/* Rodapé */
+
+footer{
+
+    background:#1b5e20;
+
+    color:white;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+}
+
+footer h2{
+
+    color:white;
+
+}
+
+/* Botão topo */
+
+#topo{
+
+    position:fixed;
+
+    bottom:30px;
+
+    right:30px;
+
+    width:55px;
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#2e7d32;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    display:none;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.3);
+
+}
+
+#topo:hover{
+
+    background:#1b5e20;
+
+}
+
+/* Listas */
+
+ul li{
+
+    margin-bottom:12px;
+
+}
+
+/* Animações */
+
+.animar{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:1s;
+
+}
+
+.mostrar{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Modo escuro */
+
+body.dark{
+
+    background:#121212;
+
+    color:white;
+
+}
+
+body.dark section{
+
+    background:#121212;
+
+}
+
+body.dark h2{
+
+    color:#81c784;
+
+}
+
+body.dark .card{
+
+    background:#1f1f1f;
+
+    color:white;
+
+}
+
+body.dark nav{
+
+    background:#0b3d0b;
+
+}
+
+body.dark footer{
+
+    background:#0b3d0b;
+
+}
+
+body.dark #quiz{
+
+    background:#1c1c1c;
+
+}
+
+body.dark .acessibilidade{
+
+    background:#222;
+
+}
+
+/* Alto contraste */
+
+body.contraste{
+
+    background:black;
+
+    color:yellow;
+
+}
+
+body.contraste h2{
+
+    color:#00ff00;
+
+}
+
+/* Responsivo */
+
+@media(max-width:900px){
+
+    nav{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    nav ul{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+    .hero h1{
+
+        font-size:2.5rem;
+
+    }
+
+    .hero p{
+
+        font-size:1.1rem;
+
+    }
+
+    section{
+
+        padding:60px 6%;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    nav h1{
+
+        font-size:1.5rem;
+
+    }
+
+    section h2{
+
+        font-size:2rem;
+
+    }
+
+    .acessibilidade{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+}
+
+/* Efeito brilho */
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.3),
+    transparent
+    );
+
+    transition:.6s;
+
+}
+
+.card{
+
+    position:relative;
+    overflow:hidden;
+}
+
+.card:hover::before{
+
+    left:100%;
+
+}
+
+/* Destaques */
+
+strong{
+
+    color:#2e7d32;
+
+}
+
+/* Seleção de texto */
+
+::selection{
+
+    background:#4caf50;
+    color:white;
+
+}
